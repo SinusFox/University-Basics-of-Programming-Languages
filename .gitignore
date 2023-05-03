@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+*.jar
+
+# VS Code
+.vscode/
