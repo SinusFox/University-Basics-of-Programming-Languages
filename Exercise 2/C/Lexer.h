@@ -17,7 +17,7 @@
 #define _ERROR_ 1000
 
 /* functions */
-int start(char* sourcecode);
+int start(char*);
 int getNextCharacter();
 int readIdentifier();
 int readNumLit();
