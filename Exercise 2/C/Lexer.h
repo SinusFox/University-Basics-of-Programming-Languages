@@ -15,3 +15,12 @@
 #define _READ_PUNCTUATION_ 150
 #define _STOP_ 999
 #define _ERROR_ 1000
+
+/* functions */
+int start(char* sourcecode);
+int getNextCharacter();
+int readIdentifier();
+int readNumLit();
+int readOperator();
+int readPunctuation();
+int main();
