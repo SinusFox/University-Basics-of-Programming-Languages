@@ -9,8 +9,11 @@ int start(char* src) {
     return _STOP_;                          // stopping the state machine in any other case
 }
 
-int getNextCharacter(char* src) {
-    return _STOP_;                      // placeholder
+int getNextCharacter(char* pos) {
+    if (isLetter(*pos)) {
+        return _READ_IDENTIFIER_;           // continues to read the identifier
+    }
+    return _STOP_;                          // stopping the state machine in any other case
 }
 
 int readIdentifier(char* src) {
@@ -27,4 +30,18 @@ int readOperator(char* src) {
 
 int readPunctuation(char* src) {
     return _STOP_;                      // placeholder
+}
+
+int isLetter(char in) {
+    if (in >= 'A') {          // capital letters
+        if (in <= 'Z') {
+            return 1;
+        }
+    }
+    if (in >= 'a') {          // non-capital letters
+        if (in <= 'z') {
+            return 1;
+        }
+    }
+    return 0;               // returning 0 if it's no letter
 }

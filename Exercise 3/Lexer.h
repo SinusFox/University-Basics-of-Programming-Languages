@@ -24,3 +24,4 @@ int readNumLit(char*);
 int readOperator(char*);
 int readPunctuation(char*);
 int main();
+int isLetter(char);
