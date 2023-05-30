@@ -18,10 +18,14 @@
 
 /* functions */
 int start(char*);
-int getNextCharacter(char*);
-int readIdentifier(char*);
-int readNumLit(char*);
-int readOperator(char*);
-int readPunctuation(char*);
+int getNextCharacter(char**);
+int readIdentifier(char**);
+int readNumLit(char**);
+int readOperator(char**);
+int readPunctuation(char**);
 int main();
 int isLetter(char);
+int isWhiteSpace(char);
+int isNum(char);
+int isOperator(char);
+int isPunctuation(char);

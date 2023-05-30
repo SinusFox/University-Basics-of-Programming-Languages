@@ -6,9 +6,11 @@ int main() {
     // variables
     char* sourcecode = "index = 2 * count + 42;";               // input string
     int lexer_state = _START_;                                  // int var for the state machine
+    char* current_pos = sourcecode;
+    char** ptr_current = &current_pos;
 
     // checking var values
-    printf(sourcecode);                                         // printing the input string to check it
+    printf("%c\n", sourcecode);                                         // printing the input string to check it
 
     // main loop
     do {
@@ -17,19 +19,19 @@ int main() {
                 lexer_state = start(sourcecode);
                 break;
             case _GET_NEXT_CHARACTER_:
-                lexer_state = getNextCharacter(sourcecode);
+                lexer_state = getNextCharacter(ptr_current);
                 break;
             case _READ_IDENTIFIER_:
-                lexer_state = readIdentifier(sourcecode);
+                lexer_state = readIdentifier(ptr_current);
                 break;
             case _READ_NUM_LIT_:
-                lexer_state = readNumLit(sourcecode);
+                lexer_state = readNumLit(ptr_current);
                 break;
             case _READ_OPERATOR_:
-                lexer_state = readOperator(sourcecode);
+                lexer_state = readOperator(ptr_current);
                 break;
             case _READ_PUNCTUATION_:
-                lexer_state = readPunctuation(sourcecode);
+                lexer_state = readPunctuation(ptr_current);
                 break;
             default: lexer_state = _ERROR_;
         }
